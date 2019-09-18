@@ -75,7 +75,7 @@ At the end of this curriculum, it is assumed that you will master the following 
 
 The following books are recommended as recommended books for the training curriculum.
 
--[Ruby on Rails 5 speed practice guide that can be used in the field] (https://book.mynavi.jp/ec/products/detail/id=93905)
+-[Ruby on Rails 5 Speed ​​Practice Guide that can be used in the field] (https://book.mynavi.jp/ec/products/detail/id=93905)
 
 The Ruby on Rails 5 Speed ​​Learning Practice Guide that can be used in the field uses the task management system as well as the training curriculum.
 Therefore, I think that there are many points that can be helpful in promoting this training.
