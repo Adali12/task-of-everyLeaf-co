@@ -1,24 +1,27 @@
-# README
+USER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+column_name | data type
+------------|----------
+user_id     |integer
+F_Name      |string
+L_Name      |string
+Email       |string
+profile     |text
 
-Things you may want to cover:
+TASK
 
-* Ruby version
+column_name | data type
+------------|----------
+task_id     |integer
+task_tittle |string
+task_number |string
+comment     |string
 
-* System dependencies
+LABLE
 
-* Configuration
+column_name | data type
+------------|----------
+lable_id    |integer
+lable_name  |string
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
