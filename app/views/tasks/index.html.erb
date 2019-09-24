@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Details</th>
+      <th>Date and time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +17,11 @@
       <tr>
         <td><%= task.name %></td>
         <td><%= task.details %></td>
+        <td><%= task.created_at %></td>
         <td><%= link_to 'show', task %></td>
         <td><%= link_to 'Edit  ', edit_task_path(task) %></td>
         <td><%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
       </tr>
     <% end %>
   </tbody>
