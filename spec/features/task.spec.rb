@@ -32,7 +32,7 @@ RSpec.feature "Task management function", type: :feature do
   # 4.Write a process to click_on (click) a button with a value (notation letter) of “Register”
   fill_in 'Name', with: 'janvier'
   fill_in 'Details', with: 'monday'
- click_button 'Create Task'
+ click_button '登録する'
  visit tasks_path
  expect(page).to have_content 'janvier'
  expect(page).to have_content 'monday'
