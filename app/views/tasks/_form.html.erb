@@ -20,8 +20,14 @@
     <%= form.label :details %>
     <%= form.text_field :details %>
   </div>
-
-
+  <div class="field">
+  <%= form.label :start %>
+  <%= form.date_select :start %>
+</div>
+<div class="field">
+  <%= form.label :enddate %>
+  <%= form.date_select :enddate %>
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>
