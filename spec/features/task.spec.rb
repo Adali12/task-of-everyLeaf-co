@@ -1,14 +1,12 @@
-# In this require, the feature required for Feature Spec such as Capybara are available.
+
 require 'rails_helper'
 RSpec.feature "Task management function", type: :feature do
     background do
         Task.create!(name: 'adax', details: 'time')
         Task.create!(name: 'adali', details: 'igihe')
       end
-  # In scenario (alias of it), write the processing of the test for each item you want to check.
   scenario "Test task list" do
   visit tasks_path
-  # write a test to verify that the string "" testtesttest "" samplesample "is included when accessing the task list page using have_content method
   expect(page).to have_content 'time'
   expect(page).to have_content 'igihe'
   end
