@@ -3,6 +3,8 @@
 <h1>Tasks</h1>
 <table>
   <thead>
+  <%= link_to 'sort by expered date', tasks_path(sort_with: 'true') %>
+ 
     <tr>
       <th>Name</th>
       <th>Details</th>
@@ -33,3 +35,4 @@
 <br>
 
 <%= link_to 'New Task', new_task_path %>
+
