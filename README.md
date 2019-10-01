@@ -25,3 +25,4 @@ lable_id    |integer
 lable_name  |string
 
 
+*HOW TO DEPLOY ON HEROKU
