@@ -1,16 +1,29 @@
 <p id="notice"><%= notice %></p>
 <%= t('view.sample') %>
 <h1>Tasks</h1>
+<%= link_to 'HOME', tasks_path %>
+<%= search_form_for @search do |form| %>
+    <div class="field">
+    <%= form.label :name_cont,"Search by Name" %><br />
+    <%= form.text_field :name_cont %><br />
+    <%= form.label :name_cont,"Search by Status" %><br />
+    <%= form.text_field :status_cont %>
+   
+    <br>
+    </div> 
+    <div class="actions"><%= form.submit "search"%></div>
+  <%end%>
+
 <table>
   <thead>
   <%= link_to 'sort by expered date', tasks_path(sort_with: 'true') %>
- 
     <tr>
       <th>Name</th>
       <th>Details</th>
       <th>Date and time</th>
       <th>Start </th>
       <th>End Date</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,11 +31,13 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
+
         <td><%= task.name %></td>
         <td><%= task.details %></td>
         <td><%= task.created_at %></td>
         <td><%= task.start %></td>
        <td><%= task.enddate %></td>
+       <td> <%= task.status %></td>
         <td><%= link_to 'show', task %></td>
         <td><%= link_to 'Edit  ', edit_task_path(task) %></td>
         <td><%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_09_27_083110) do
     t.datetime "enddate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
 end
