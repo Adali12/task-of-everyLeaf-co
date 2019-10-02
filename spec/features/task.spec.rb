@@ -25,4 +25,6 @@ RSpec.feature "Task management function", type: :feature do
   end
   scenario "Test whether tasks are search by status or by Name " do
   end
+  scenario "Test whether tasks are Sort in high order by priority " do
+  end
 end

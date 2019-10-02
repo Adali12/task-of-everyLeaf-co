@@ -7,6 +7,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.datetime :enddate
       t.timestamps
       t.string :status
+     t.integer:priority
     end
   end
 end

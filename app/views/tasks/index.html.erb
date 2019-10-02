@@ -16,7 +16,7 @@
 
 <table>
   <thead>
-  <%= link_to 'sort by expered date', tasks_path(sort_with: 'true') %>
+  <%= link_to 'sort by priority High', tasks_path(sort_with: 'true') %>
     <tr>
       <th>Name</th>
       <th>Details</th>
@@ -24,6 +24,7 @@
       <th>Start </th>
       <th>End Date</th>
       <th>Status</th>
+      <th>Priority</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,6 +39,7 @@
         <td><%= task.start %></td>
        <td><%= task.enddate %></td>
        <td> <%= task.status %></td>
+       <td> <%= task.priority %></td>
         <td><%= link_to 'show', task %></td>
         <td><%= link_to 'Edit  ', edit_task_path(task) %></td>
         <td><%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
