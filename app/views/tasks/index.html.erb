@@ -2,18 +2,18 @@
 <%= t('view.sample') %>
 <h1>Tasks</h1>
 <%= link_to 'HOME', tasks_path %>
-<%= search_form_for @search do |form| %>
-    <div class="field">
-    <%= form.label :name_cont,"Search by Name" %><br />
-    <%= form.text_field :name_cont %><br />
-    <%= form.label :name_cont,"Search by Status" %><br />
-    <%= form.text_field :status_cont %>
-   
-    <br>
-    </div> 
-    <div class="actions"><%= form.submit "search"%></div>
-  <%end%>
 
+<%= search_form_for @search do |form| %>
+  <div class="field">
+  <%= form.label :name_cont,"Search by Name" %><br />
+  <%= form.text_field :name_cont %><br />
+  <%= form.label :name_cont,"Search by Status" %><br />
+  <%= form.text_field :status_cont %>
+ 
+  <br>
+  </div> 
+  <div class="actions"><%= form.submit "search"%></div>
+<%end%>
 <table>
   <thead>
   <%= link_to 'sort by priority High', tasks_path(sort_with: 'true') %>
@@ -48,7 +48,8 @@
     <% end %>
   </tbody>
 </table>
-
+</br>
+<%= paginate  @tasks %>
 <br>
 
 <%= link_to 'New Task', new_task_path %>

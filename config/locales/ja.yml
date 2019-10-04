@@ -2,6 +2,10 @@
 ja:
   view:
     sample: Sample
+    pagination:
+      previous: "&lt; Previous"
+      next: "Next &gt;"
+      truncate: "..."
   activerecord:
     errors:
       messages:
