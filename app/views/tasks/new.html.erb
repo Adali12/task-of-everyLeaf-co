@@ -1,7 +1,14 @@
-<h1>New Task</h1>
-<td><%= @task.created_at %></td>
-<%= render 'form', task: @task %>
-
-<%= link_to 'Back', tasks_path %>
 <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 </div>
+<div class="nyc">
+<div class="card" style="width: 25rem;margin-left: 30rem;">
+  <div class="card-header" style="background-color:black; height:12rem;color:white;" ><h1>New Task</h1></div>
+  <div class="card-body" ><td><%= @task.created_at %></td>
+  <%= render 'form', task: @task %></div>
+  <div class="card-footer"><%= link_to 'Back', tasks_path %></div>
+</div>
+</div>
+
+
+
+

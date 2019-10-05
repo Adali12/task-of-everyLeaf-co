@@ -62,4 +62,11 @@ position: fixed;
 width: 100rem;
 }
 
-
+.para{
+text-align: center;
+margin-bottom: 20rem;
+}
+.nyc{
+    position: relative;
+    bottom: 100rem;
+}
