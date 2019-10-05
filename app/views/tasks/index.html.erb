@@ -1,56 +1,62 @@
-<p id="notice"><%= notice %></p>
-<%= t('view.sample') %>
-<h1>Tasks</h1>
-<%= link_to 'HOME', tasks_path %>
+<div class="card"style="background-color:gray;" >
+<div class="heda">
+<div class="card-header"style="background-color:black; height:12rem;" >
+<%= link_to 'HOME', tasks_path,class:"btn btn-info" %>
+
+
+
+
+</div>
+</div>
+<div class="dd">
+<div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
 <%= search_form_for @search do |form| %>
-  <div class="field">
+  <div class="field1">
   <%= form.label :name_cont,"Search by Name" %><br />
   <%= form.text_field :name_cont %><br />
   <%= form.label :name_cont,"Search by Status" %><br />
   <%= form.text_field :status_cont %>
- 
   <br>
   </div> 
-  <div class="actions"><%= form.submit "search"%></div>
-<%end%>
-<table>
-  <thead>
-  <%= link_to 'sort by priority High', tasks_path(sort_with: 'true') %>
-    <tr>
-      <th>Name</th>
-      <th>Details</th>
-      <th>Date and time</th>
-      <th>Start </th>
-      <th>End Date</th>
-      <th>Status</th>
-      <th>Priority</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="actions1"><%= form.submit "search",class:"btn btn-info" %></div>
+  <%end%>
+  </div>
+  
+ 
 
-  <tbody>
+
+
+
+
+<div class="not">
+<p id="notice"><%= notice %></p>
+<%= t('view.sample') %><br>
+<p>SORT BY <br>
+<%= link_to 'priority High', tasks_path(sort_with: 'true'),class:"btn btn-info" %></p>
+<p>click here for <div class="new"><%= link_to 'New Post', new_task_path,class:"btn btn-info" %></p></div>
+</div>
+<img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png" alt="" class="img-fluid">
+<div class="card-body" style="width: 25rem;margin-left: 30rem;">
+  <div class="card1" style="width: 35rem;">
     <% @tasks.each do |task| %>
-      <tr>
-
-        <td><%= task.name %></td>
-        <td><%= task.details %></td>
-        <td><%= task.created_at %></td>
-        <td><%= task.start %></td>
-       <td><%= task.enddate %></td>
-       <td> <%= task.status %></td>
-       <td> <%= task.priority %></td>
-        <td><%= link_to 'show', task %></td>
-        <td><%= link_to 'Edit  ', edit_task_path(task) %></td>
-        <td><%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      
-      </tr>
+      <div class="card">
+      <div class="card-header" style="color:blue; "><b><%= task.name %> 's Task</b></div>
+      <div class="card-body" style="width: 25rem;"><h4>DETAILS</h4> <%= task.details %></div>
+      <div class="card-body" style="width: 25rem;"><h4>CREATION DATE AND TIME</h4> <%= task.created_at %></div>
+      <div class="card-body" style="width: 25rem;"> <h4>START DATE AND TIME</h4><%= task.start %></div>
+      <div class="card-body" style="width: 25rem;"><h4>ENDED DATE</h4> <%= task.enddate %></div>
+      <div class="card-body" style="width: 25rem;"><h4> STATUS</h4> <%= task.status %></div>
+      <div class="card-body" style="width: 25rem;"><h4>PRIORITY</h4><%= task.priority %></div>
+       <div class="card-footer"style="width: 35rem;">
+    <%= link_to 'show', task, class:"btn btn-dark" %>
+      <%= link_to 'Edit  ', edit_task_path(task), class:"btn btn-dark" %>
+    <%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %>
+  </div>
+    </br>
+    </div>
     <% end %>
+    <div class="card-footer"style="width: 35rem;"><%= paginate  @tasks %></div>
+   </div>
   </tbody>
-</table>
-</br>
-<%= paginate  @tasks %>
-<br>
-
-<%= link_to 'New Task', new_task_path %>
-
+</div>

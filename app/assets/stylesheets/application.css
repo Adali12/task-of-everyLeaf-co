@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+.field1{
+position: relative;
+float: right;  
+margin-right: 16px;
+margin-bottom: 7rem;
+color:white;
+}
+.actions1{
+position: relative;
+float: right;
+margin-top: 9rem;
+margin-right: -7rem;
+}
+.card1{
+position: relative;
+bottom: 145.5rem;
+
+}
+.not{
+    position: relative;
+    background-color: gray;
+    color: black;
+    bottom:101rem;
+    width:17rem;
+    height:12rem ;
+}
+/* .new{
+    position: relative;
+    bottom:100rem;   
+} */
+html,
+body,
+header,
+.view {
+  height:100rem;
+  bottom: 10rem;
+}
+
+.img-fluid{
+    position: relative;
+    width: 400px;
+    height:500px;
+    bottom: 90rem;
+}
+.heda{
+position: fixed;
+width: 100rem;
+}
+
+
