@@ -37,6 +37,10 @@
 <%= form.label :priority %><br />
 <%= form.select :priority, [ 'High', 'Medium', 'Low'], :prompt => 'Select One' %>
 </div>
+<div class="field">
+<% if logged_in? %>
+<%= form.hidden_field :user_id, value: current_user.id %>
+<% end %>
 
   <div class="actions">
     <%= form.submit %>

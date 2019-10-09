@@ -6,9 +6,9 @@ class TasksController < ApplicationController
  if params[:q]
  @tasks=@search.result.order(:name).page(params[:page]).per(2)
  elsif params[:sort_with]
-   @tasks = Task.all.order("priority DESC").order(:name).page(params[:page]).per(2)
+   @tasks = Task.all.order("priority DESC").order(:name).page(params[:page]).per(10)
  else
- @tasks = Task.all.order("created_at DESC").order(:name).page(params[:page]).per(2)
+ @tasks = Task.all.order("created_at DESC").order(:name).page(params[:page]).per(10)
  end
   end
   def show
@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
   def create
     @task = Task.new(task_params)
-
+    
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
@@ -55,6 +55,6 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
     end
     def task_params
-      params.require(:task).permit(:name, :details,:start,:enddate,:status,:priority)
+      params.require(:task).permit(:name, :details,:start,:enddate,:status,:priority,:user_id)
     end
 end
