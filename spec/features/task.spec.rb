@@ -33,5 +33,4 @@ click_on 'Back'
   scenario "Test whether tasks are Sort in high order by priority " do
     assert Task.all.order('priority desc')
   end
-  
 end
