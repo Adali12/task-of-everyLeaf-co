@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   def index
-
+ 
  @search=Task.search(params[:q])
  if params[:q]
  @tasks=@search.result.order(:name).page(params[:page]).per(2)
@@ -9,8 +9,8 @@ class TasksController < ApplicationController
    @tasks = Task.all.order("priority DESC").order(:name).page(params[:page]).per(2)
  else
  @tasks = Task.all.order("created_at DESC").order(:name).page(params[:page]).per(2)
- end
   end
+end
   def show
   end
   def new
@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
   def create
     @task = Task.new(task_params)
-    
+    @task.user_id == current_user.id
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }

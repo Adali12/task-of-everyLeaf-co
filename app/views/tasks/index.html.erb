@@ -29,6 +29,7 @@
 <div class="card-body" style="width: 25rem;margin-left: 30rem;">
   <div class="card1" style="width: 35rem;">
     <% @tasks.each do |task| %>
+      <% if task.user.id == current_user.id %>
       <div class="card">
       <div class="card-header" style="color:blue; "><b><%= task.name %> 's Task</b></div>
       <div class="card-body" style="width: 25rem;"><h4> DETAILS</h4> <%= task.details %></div>
@@ -45,6 +46,8 @@
     </br>
     </div>
     <% end %>
+    <% end %>
+
     <div class="card-footer"style="width: 35rem;"><%= paginate  @tasks %></div>
    </div>
    <div class="para">
