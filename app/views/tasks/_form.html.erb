@@ -30,12 +30,12 @@
 </div>
 <div class="field">
 <%= form.label :status %><br /><%= form.radio_button :status, 'Not started'%> Not started 
-<%= form.radio_button :status, 'In progress'%> In progress
+<%= form.radio_button :status, 'In progress', checked: true %> In progress
 <%= form.radio_button :status, 'Done'%> Done
 </div>
 <div class="field">
 <%= form.label :priority %><br />
-<%= form.select :priority, [ 'High', 'Medium', 'Low'], :prompt => 'Select One' %>
+<%= form.select :priority, [ 'High', 'Medium', 'Low'] %>
 </div>
 <div class="field">
 <% if logged_in? %>
