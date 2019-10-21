@@ -61,7 +61,9 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-
+  
+    
+  
   # Add the following description
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
