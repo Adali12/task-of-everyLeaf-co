@@ -1,5 +1,5 @@
-<h1>New User</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Back', users_path %>
+<div class="card" style="width: 25rem;margin-left: 30rem;">
+<div class="card-header" style="background-color:black; height:12rem;color:white;" ><h1>New User</h1></div>
+<div class="card-body" ><%= render 'form', user: @user %></div>
+<div class="card-footer"><%= link_to 'HOME', tasks_path,class:"btn btn-info" %></div>
+</div>

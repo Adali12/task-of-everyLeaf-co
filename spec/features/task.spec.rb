@@ -69,5 +69,5 @@ background do
         expect(page).to have_content 'grettings'
          
        end
-  
+       
 end

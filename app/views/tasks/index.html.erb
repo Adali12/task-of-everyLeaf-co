@@ -1,7 +1,9 @@
+
 <div class="card"style="background-color:gray;" >
 <div class="heda">
-<div class="card-header"style="background-color:black; height:12rem;" >
+<div class="card-header"style="background-color:black; height:12rem; width:80rem;" >
 <%= link_to 'HOME', tasks_path,class:"btn btn-info" %>
+
 </div>
 </div>
 <div class="dd">
@@ -29,27 +31,27 @@
 <div class="card-body" style="width: 25rem;margin-left: 30rem;">
   <div class="card1" style="width: 35rem;">
     <% @tasks.each do |task| %>
-      <% if task.user.id == current_user.id %>
-      <div class="card">
-      <div class="card-header" style="color:blue; "><b><%= task.name %> 's Task</b></div>
-      <div class="card-body" style="width: 25rem;"><h4> DETAILS</h4> <%= task.details %></div>
-      <div class="card-body" style="width: 25rem;"><h4> CREATION DATE AND TIME</h4> <%= task.created_at %></div>
-      <div class="card-body" style="width: 25rem;"> <h4 >START DATE AND TIME</h4><%= task.start %></div>
-      <div class="card-body" style="width: 25rem;"><h4>ENDED DATE</h4> <%= task.enddate %></div>
-      <div class="card-body" style="width: 25rem;"><h4> STATUS</h4> <%= task.status %></div>
-      <div class="card-body" style="width: 25rem;"><h4>PRIORITY</h4><%= task.priority %></div>
-       <div class="card-footer"style="width: 35rem;">
-    <%= link_to 'show', task, class:"btn btn-dark" %>
-      <%= link_to 'Edit  ', edit_task_path(task), class:"btn btn-dark" %>
-    <%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %>
-  </div>
-    </br>
-    </div>
+      <% if logged_in? %>
+      <% if current_user.id == task.user_id %>
+          <div class="card">
+            <div class="card-header" style="color:blue; "><b><%= task.name %> 's Task</b></div>
+            <div class="card-body" style="width: 25rem;"><h4> DETAILS</h4> <%= task.details %></div>
+            <div class="card-body" style="width: 25rem;"><h4> CREATION DATE AND TIME</h4> <%= task.created_at %></div>
+            <div class="card-body" style="width: 25rem;"> <h4 >START DATE AND TIME</h4><%= task.start %></div>
+            <div class="card-body" style="width: 25rem;"><h4>ENDED DATE</h4> <%= task.enddate %></div>
+            <div class="card-body" style="width: 25rem;"><h4> STATUS</h4> <%= task.status %></div>
+            <div class="card-body" style="width: 25rem;"><h4>PRIORITY</h4><%= task.priority %></div>
+            <div class="card-footer"style="width: 35rem;">
+              <%= link_to 'show', task, class:"btn btn-dark" %>
+                <%= link_to 'Edit  ', edit_task_path(task), class:"btn btn-dark" %>
+              <%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
-    <% end %>
-
     <div class="card-footer"style="width: 35rem;"><%= paginate  @tasks %></div>
-   </div>
+  </div>
    <div class="para">
 <p >
 I got to know African APP LAUNCHPAD on social media
@@ -59,5 +61,3 @@ I got to know African APP LAUNCHPAD on social media
  and problem solving. I decide to apply in programming data science in the next class
   and I want to become involved in data science 
  and I look forward to working as a data scientist in programming. </p></div>
- 
-
