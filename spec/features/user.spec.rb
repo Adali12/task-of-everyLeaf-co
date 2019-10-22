@@ -6,8 +6,8 @@ RSpec.feature " user management function ", type: :feature do
 background do
  User.create!(name: "armel", email: 'arl@gmail.Com', password: '1234567')
  visit  new_session_path
-#  fill_in  'email' ,  with: 'arl@gmail.Com'
-#  fill_in  'password' ,  with: '1234567'
+#  fill_in  'Email' ,  with: 'arl@gmail.Com'
+#  fill_in  'Password' ,  with: '1234567'
  click_on  'Log in'
 end
 scenario "Test number of users" do
@@ -16,15 +16,18 @@ scenario "Test number of users" do
  expect(@user).to eq 2
 end
       scenario "Test user list" do
-        User.create!(name: 'adax', email: 'adax@gmail.com',  password: '123456')
+        User.create!(name: 'adax', email: 'adax@gmail.com',  password: '123456',password: '123456')
         visit users_path
-  
+        expect(page ).to  have_content  'adax'
+        expect(page ).to  have_content  'armel'
       end
       scenario "Test user creation" do
-        User.create!(name: 'adax', email: 'adax@gmail.com',  password: '123456')
+        User.create!(name: 'adax', email: 'adax@gmail.com',  password: '123456',password: '123456')
         visit users_path
+        expect(page ).to  have_content  'adax'
       end
       scenario "test enable user creation page" do
         visit users_path
+        expect(page ).to  have_content  'armel'
       end
 end
