@@ -3,9 +3,11 @@
 <div class="card-body" >
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
   <div class="form-group">
+  <%= f.label :email %>
     <%= f.email_field :email,class:"form-control",id:"formGroupExampleInput", placeholder:"Enter Your Email",style:"width:20 rem" %>
   </div>
   <div class="form-group">
+  <%= f.label :password %>
     <%= f.password_field :password,class:"form-control",id:"formGroupExampleInput2", placeholder:"Enter Your Password",style:"width:20 rem" %><br>
    </div>
    <div class="card-footer"><%= f.submit "Log in",class:"btn btn-info" %>
