@@ -30,4 +30,19 @@ end
         visit users_path
         expect(page ).to  have_content  'armel'
       end
+      scenario 'Test User Deletion' do
+        User.create!(name: 'mentor', email: 'm@gmail.com', admin: 'true', password: '123456')
+        @user = User.last
+        @user.destroy
+        # expect(page).to have_content('testtesttest')
+        # click_on 'Destroy'
+        visit users_path
+        expect(page).not_to have_content('mentor')
+       end
+       scenario "Admin can create and manage user" do
+         visit new_admin_user_path
+         User.create!(name: 'Nina', email: 'na@gmail.com', admin: 'true', password: '1234567')
+         visit  admin_users_url
+       expect(page).to have_text('Nina')
+       end
 end
