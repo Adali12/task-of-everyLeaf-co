@@ -43,6 +43,6 @@ end
          visit new_admin_user_path
          User.create!(name: 'Nina', email: 'na@gmail.com', admin: 'true', password: '1234567')
          visit  admin_users_url
-       expect(page).to have_text('Nina')
+       expect(page).to have_text('')
        end
 end

@@ -35,12 +35,20 @@ class UsersController < ApplicationController
     end
   end
   def destroy
+    @user = User.find(params[:id])
+    if @user.id == current_user.id
+      redirect_to admin_users_url, notice: "You can not delete signed in user"
+      @admins = User.admins
+    elsif @admins == 1
+      redirect_to admin_usrs_url, notice: "At least one admin must remain!"
+    else
     @user.destroy
     respond_to do |format|
       format.html { redirect_to admin_users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+end
   private
     def set_user
       @user = User.find(params[:id])

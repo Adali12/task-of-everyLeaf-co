@@ -1,10 +1,6 @@
 
 <div class="card"style="background-color:gray;" >
 <div class="heda">
-<div class="card-header"style="background-color:black; height:12rem; width:80rem;" >
-<%= link_to 'HOME', tasks_path,class:"btn btn-info" %>
-
-</div>
 </div>
 <div class="dd">
 <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
@@ -24,8 +20,7 @@
 <p id="notice"><%= notice %></p>
 <%= t('view.sample') %><br>
 <p>SORT BY <br>
-<%= link_to 'priority High', tasks_path(sort_with: 'true'),class:"btn btn-info" %></p>
-<p>click here for <div class="new"><%= link_to 'New Post', new_task_path,class:"btn btn-info" %></p></div>
+<%= link_to 'priority High', tasks_path(sort_with: 'true'),class:"btn btn-info" %></p></div>
 </div>
 <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png" alt="" class="img-fluid">
 <div class="card-body" style="width: 25rem;margin-left: 30rem;">
@@ -42,8 +37,8 @@
             <div class="card-body" style="width: 25rem;"><h4> STATUS</h4> <%= task.status %></div>
             <div class="card-body" style="width: 25rem;"><h4>PRIORITY</h4><%= task.priority %></div>
             <div class="card-footer"style="width: 35rem;">
-              <%= link_to 'show', task, class:"btn btn-dark" %>
-                <%= link_to 'Edit  ', edit_task_path(task), class:"btn btn-dark" %>
+              <%= link_to 'show', task,class:"btn btn-info" %>
+                <%= link_to 'Edit  ', edit_task_path(task),class:"btn btn-info" %>
               <%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %>
             </div>
           </div>
