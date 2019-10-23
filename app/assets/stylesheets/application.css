@@ -18,7 +18,7 @@ position: relative;
 float: right;  
 margin-right: 16px;
 margin-bottom: 7rem;
-color:white;
+color:black;
 }
 .actions1{
 position: relative;
@@ -33,7 +33,6 @@ bottom: 145.5rem;
 }
 .not{
     position: relative;
-    background-color: gray;
     color: black;
     bottom:101rem;
     width:17rem;

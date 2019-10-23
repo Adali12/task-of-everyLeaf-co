@@ -5,4 +5,14 @@ class User < ApplicationRecord
   before_validation { email.downcase! }
   has_secure_password
   has_many :tasks, dependent: :destroy
+  def self.admins
+    @users = User.all
+  @admins=0
+    @users.each do |user|
+      if user.admin?
+        @admins += 1
+      end
+    end
+    return @admins
+  end
 end

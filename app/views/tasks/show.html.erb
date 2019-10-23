@@ -9,6 +9,22 @@
   <strong>Details:</strong>
   <%= @task.details %>
 </p>
+<p>
+  <strong>status:</strong>
+  <%= @task.status %>
+</p>
+<p>
+  <strong>start Date:</strong>
+  <%= @task.start %>
+</p>
+<p>
+  <strong>End Date:</strong>
+  <%= @task.enddate %>
+</p>
+<p>
+  <strong>priority:</strong>
+  <%= @task.priority %>
+</p>
 
-<%= link_to 'Edit ', edit_task_path(@task) %> |
-<%= link_to 'HOME', tasks_path %>
+<%= link_to 'Edit ', edit_task_path(@task) ,class:"btn btn-info"%> 
+<%= link_to 'Back', tasks_path  ,class:"btn btn-info"%>

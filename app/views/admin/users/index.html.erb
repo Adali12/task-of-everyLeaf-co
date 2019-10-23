@@ -1,23 +1,22 @@
 <p id="notice"><%= notice %></p>
-
 <h1>ALL Users</h1>
-
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Number of Task</th>
+      <th>Task</th>
+      <th>Admin</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td> <%= Task.where(user_id: user.id).count %></td>
+        <td><%= user.admin %></td>
         <td><%= link_to 'Show', user,class:"btn btn-info" %></td>
         <td><%= link_to 'Edit', edit_user_path(user),class:"btn btn-info" %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
@@ -25,12 +24,10 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 <%= link_to 'New User', new_user_path,class:"btn btn-info" %>
 <br>
 <h1  style="margin-left: 30rem;">All Tasks</h1>
-
     <% @tasks.each do |task| %>
           <div class="card" style="width: 25rem;margin-left: 30rem;">
             <div class="card-header" style="color:blue; "><b><%= task.name %> 's Task</b></div>
@@ -41,8 +38,8 @@
             <div class="card-body" style="width: 25rem;"><h4> STATUS</h4> <%= task.status %></div>
             <div class="card-body" style="width: 25rem;"><h4>PRIORITY</h4><%= task.priority %></div>
             <div class="card-footer"style="width: 25rem;">
-              <%= link_to 'show', task, class:"btn btn-dark" %>
-                <%= link_to 'Edit  ', edit_task_path(task), class:"btn btn-dark" %>
+              <%= link_to 'show', task,class:"btn btn-info"%>
+                <%= link_to 'Edit  ', edit_task_path(task),class:"btn btn-info" %>
               <%= link_to 'Delete ', task, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %>
             </div>
           </div>

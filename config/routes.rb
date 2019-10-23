@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :tasks
   # get 'task/index'
   resources :task
-  root 'tasks#index'
+  root 'sessions#new'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   namespace :admin do

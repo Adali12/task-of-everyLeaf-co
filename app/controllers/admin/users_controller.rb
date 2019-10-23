@@ -1,6 +1,11 @@
 class Admin::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+before_action :ensure_admin_user!
+def ensure_admin_user!
+unless current_user and current_user.admin?
+  redirect_to root_path, notice:"you don't belong there!!!!! <<you are not admin>>"
+end
+end
   # GET /users
   # GET /users.json
   def index
@@ -17,13 +22,8 @@ class Admin::UsersController < ApplicationController
   def new
     @user = User.new
   end
-
-  # GET /users/1/edit
   def edit
   end
-
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
 
@@ -56,12 +56,20 @@ class Admin::UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @user = User.find(params[:id])
+    if @user.id == current_user.id
+      redirect_to admin_users_url, notice: "You can not delete signed in user"
+      @admins = User.admins
+    elsif @admins == 1
+      redirect_to admin_usrs_url, notice: "At least one admin must remain!"
+    else
     @user.destroy
     respond_to do |format|
       format.html { redirect_to admin_users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

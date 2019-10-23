@@ -3,7 +3,6 @@
   <div class="card-header" style="background-color:black; height:12rem;color:white;" ><h1>New Task</h1></div>
   <div class="card-body" ><td><%= @task.created_at %></td>
   <%= render 'form', task: @task %></div>
-  <div class="card-footer"><%= link_to 'Back', tasks_path %></div>
 </div>
 </div>
 <% else %>
