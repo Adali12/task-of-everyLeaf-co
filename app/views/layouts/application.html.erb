@@ -13,11 +13,10 @@
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
   <div class="card">
+  <% if logged_in? %>
   <div class="card-header" style="background-color:black;" >
   <%= link_to 'Admin Page', admin_users_path,class:"btn btn-link"%>
-  <%= link_to 'Users List', users_path,class:"btn btn-link"%>
   <%= link_to 'New Task', new_task_path,class:"btn btn-link"%>
-  <% if logged_in? %>
   <%= link_to 'New Lable', new_label_path,class:"btn btn-link"%>
   <%= link_to "Logout", session_path(current_user.id), method: :delete,class:"btn btn-link" %>
 <% end %>
