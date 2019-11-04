@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<div class="home">
+<%= link_to 'Home', admin_users_path,class:"btn btn-info" %></div>
 <h1>ALL Users</h1>
 <%= link_to 'Users List', users_path,class:"btn btn-link"%>
 <table>
@@ -18,8 +20,8 @@
         <td><%= user.email %></td>
         <td> <%= Task.where(user_id: user.id).count %></td>
         <td><%= user.admin %></td>
-        <td><%= link_to 'Show', user,class:"btn btn-info" %></td>
-        <td><%= link_to 'Edit', edit_user_path(user),class:"btn btn-info" %></td>
+        <td><%= link_to 'Show',  admin_user_path(user),class:"btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_admin_user_path(user),class:"btn btn-info" %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
       </tr>
     <% end %>
