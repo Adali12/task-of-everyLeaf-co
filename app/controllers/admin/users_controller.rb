@@ -26,11 +26,10 @@ end
   end
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         session[:user_id]= @user.id
-        format.html { redirect_to admin_users_path(@user.id), notice: 'User was successfully created.' }
+        format.html { redirect_to admin_users_path(@ususeer.id), notice: 'User was successfully created.' }
         format.json { render :index, status: :created, location: @task }
       else
         format.html { render :new }

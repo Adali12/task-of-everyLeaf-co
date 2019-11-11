@@ -31,7 +31,7 @@
 <%= link_to 'New User', new_user_path,class:"btn btn-info" %>
 <br>
 <h1  style="margin-left: 30rem;">All Tasks</h1>
-    <% @tasks.each do |task| %>
+   <% @tasks.each do |task| %>
           <div class="card" style="width: 25rem;margin-left: 30rem;">
             <div class="card-header" style="color:blue; "><b><%= task.name %> 's Task</b></div>
             <div class="card-body" style="width: 25rem;"><h4> DETAILS</h4> <%= task.details %></div>
